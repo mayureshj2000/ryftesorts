@@ -1,0 +1,9 @@
+runtime:
+  type: python
+
+entry_point:
+  file: server.js
+
+command:
+  # custom command to run the app (overrides default)
+  run: "node server.js"
