@@ -1,9 +1,10 @@
+# app.yaml for a Node.js Databricks app
+
 runtime:
-  type: python
+  type: nodejs
 
 entry_point:
   file: server.js
 
 command:
-  # custom command to run the app (overrides default)
   run: "node server.js"
