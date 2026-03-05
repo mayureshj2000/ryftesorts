@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #1a0000 0%, #000000 60%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body.inner-page {
+    background-image: url('/images/esports_center_wallpaper.png'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: #050000;
+    background-blend-mode: overlay;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body.inner-page::before {
+    display: none !important; /* This kills the black gradient behind your box */
+}
+
+/* 🔥 NAVBAR */
+nav {
+    display: grid;
+    justify-content: space-between;
+    padding: 1px 60px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,0,0,0.3);
+    display: grid;
+    grid-template-columns: 35fr auto 1fr; /* left | center | right */
+    align-items: center;
+
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: #ff1a1a;
+    text-shadow: 0 0 15px #ff0000;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff1a1a;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+/* 🔥 HERO SECTION */
+.hero {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.hero span {
+    color: #ff1a1a;
+    text-shadow: 0 0 25px #ff0000;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* 🔥 BUTTONS */
+.buttons {
+    margin-top: 50px;
+}
+
+.btn {
+    padding: 15px 40px;
+    margin: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.primary {
+    background: linear-gradient(90deg, #ff0000, #990000);
+    color: white;
+}
+
+.primary:hover {
+    box-shadow: 0 0 30px #ff0000;
+    transform: scale(1.05);
+}
+
+.secondary {
+    border: 2px solid #ff0000;
+    color: #ff1a1a;
+}
+
+.secondary:hover {
+    background: #ff0000;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 🔥 STATS SECTION */
+.stats {
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+    gap: 60px;
+    padding-bottom: 100px;
+}
+
+.card {
+    background: rgba(255,0,0,0.05);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card h2 {
+    font-size: 32px;
+    color: #ff1a1a;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+.card p {
+    margin-top: 10px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+}
+
+.logo img {
+    height: 150px;
+    filter: drop-shadow(0 0 20px #ff0000);
+}
+
+/* Background Video */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;  /* pushes visible frame down */
+    z-index: -2;
+}
+
+body::before {
+    display: none !important;
+}
+/* login */
+.auth-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: rgba(0,0,0,0.85);
+    padding: 40px;
+    border: 1px solid rgba(255,0,0,0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
+    text-align: center;
+    color: white;
+}
+
+.auth-box h2 {
+    margin-bottom: 30px;
+    color: #ff0000;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #888;
+    transform: translateY(-50%);
+    font-size: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    background: #111;
+    padding: 0 5px;
+    color: #ff0033;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff0033;
+    border: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+.auth-btn:hover {
+    background: #cc0029;
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #ff0033;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Tournament Cards 
+.tournament-card {
+    position: relative;
+    background: #0f0f0f;
+    padding: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    border: 1px solid #222;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+
+}*/
+.tournament-card {
+    position: relative;
+    background: #0d0d0d; /* Deep dark background */
+    padding: 30px;
+    border-radius: 12px;
+    overflow: visible;
+    color: white;
+    min-height: 250px;
+    display: flex;
+    align-items: center; 
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+/* Background Image Layer */
+.tournament-card::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    z-index: 0;
+    background-size: cover;
+    background-position: center right;
+    border-radius: 12px;
+    filter: brightness(0.7) contrast(1.2); /* Slightly darker for better text pop */
+
+    -webkit-mask-image: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 25%, 
+        black 75%, 
+        black 100%);
+    mask-image: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 25%, 
+        black 75%, 
+        black 100%);
+}
+
+.tournament-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Dark red fade from left to transparent */
+    background: linear-gradient(90deg, 
+        rgba(100, 0, 0, 0.95) 0%, 
+        rgba(100, 0, 0, 0.7) 30%, 
+        rgba(0, 0, 0, 0) 70%);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.tournament-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Clean vertical spacing */
+}
+
+/* 🔥 TITLE STYLES */
+.tournament-card-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff0033; /* Changed to Red to match your mockup */
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(255, 0, 51, 0.5), 2px 2px 5px #000;
+}
+
+/* 📝 DETAILS STYLES */
+.tournament-card-content p {
+    font-size: 1rem;
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.8); /* Slightly faded for secondary text */
+    text-shadow: 1px 1px 3px #000;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* ⚪ BOLD LABELS (Game:, Mode:, etc.) */
+.tournament-card-content p strong {
+    color: #ffffff; /* Pure white for the labels */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+.tournament-card:hover {
+    border-color: #ff0033;
+    box-shadow: inset 0 0 20px rgba(255, 0, 51, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.tournament-card:hover::before {
+    transform: scale(1.05);
+}
+
+.bg-bgmi::before {
+    background-image: url('/images/pubg_card2.png');
+    background-repeat: no-repeat;
+    background-position: 118% center;
+    background-size: 79%;
+    transition: all 0.5s ease-in-out;
+}
+
+.register-button {
+    position: absolute;
+    /* Pushes button to the bottom center of the PARENT card */
+    bottom: -22px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    z-index: 10; /* Ensures it is on top of everything */
+    padding: 12px 45px;
+    
+    /* Darker button style from your edit */
+    background: linear-gradient(180deg, #3d0a0a 0%, #1a0505 100%);
+    color: #fff;
+    border: 1.5px solid #ff0033;
+    border-radius: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    transition: 0.3s ease;
+}
+
+.register-button:hover {
+    transform: translateX(-50%) scale(1.05);
+    background: #ff0033;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+}
+
+@keyframes button-glow-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 51, 0.6);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 51, 0.9);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 51, 0.6);
+        transform: scale(1);
+    }
+}
+
+.confirm-btn, #confirmRegistration {
+    width: 100%;
+    padding: 15px;
+    background: #ff0033;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps it behind your cards */
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Use cover to fill the screen, blur hides the pixels */
+}
+
+body.inner-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex; /* Enables flexbox centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.video-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    /* This blurs the video/image without affecting your cards */
+    transform: scale(1.05); /* Prevents white edges from the blur */
+}
+
+.main-content-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Do NOT apply any filters here */
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    /* This adds a tiny dot pattern over the video/image */
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 3px 3px;
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens it for text readability */
+    z-index: 1;
+}
+
+.tournament-container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1100px;
+    padding: 40px;
+    border-radius: 20px;
+
+    /* 🔥 THE FIX: Use a brighter, more opaque red (Alpha 0.45) */
+    background: rgba(200, 0, 0, 0.45) !important; 
+    
+    /* 🔥 THE GLASS: Pulls the red background into the container */
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+
+    /* Neon Border and Glow */
+    border: 2px solid rgba(255, 50, 50, 0.6);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.3), 
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.hero .buttons .btn.secondary {
+    /* 1. Remove the outline style */
+    border: none !important;
+    
+    /* 2. Apply the "Join the War" Red Power Gradient */
+    background: linear-gradient(90deg, #ff0000, #990000) !important;
+    
+    /* 3. Force white text and bold font */
+    color: white !important;
+    font-weight: 900 !important;
+    
+    /* 4. Add the glowing shadow */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4) !important;
+    
+    /* 5. Ensure it transitions smoothly */
+    transition: all 0.3s ease;
+}
+
+/* Specific Hover effect for this button */
+.hero .buttons .btn.secondary:hover {
+    box-shadow: 0 0 30px #ff0000 !important;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}

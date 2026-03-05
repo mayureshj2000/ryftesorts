@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournaments | RYFT Esports</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="inner-page">
+<body class="auth-page">
+<div class="auth-container" style="max-width: 900px;">
+    <div class="auth-box">
+
+        <h2>Available Tournaments</h2>
+
+        <div class="tournament-card bg-bgmi">
+            <div class="tournament-card-content">
+                <h2> BGMI Solo  </h2>
+                <p><strong>Game:</strong> BGMI</p>
+                <p><strong>Mode:</strong> Solo</p>
+                <p><strong>Date:</strong> 25 March 2026</p>
+                <p><strong>Prize Pool:</strong> ₹200</p>
+            </div>
+
+            <button class="register-button">Register Now</button>
+        </div>
+
+<!-- Registration Modal -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <h3 id="tournamentTitle"></h3>
+
+        <form action="/register-tournament" method="POST">
+            <input type="hidden" name="tournament" id="tournamentInput">
+
+            <div class="input-group">
+                <input type="number" name="age" id="playerAge" required>
+                <label>Your Age</label>
+            </div>
+
+            <button type="submit" class="auth-btn">
+                Confirm Registration
+            </button>
+        </form>
+
+        <p id="ageError" style="color:red; display:none;">
+            You do not meet the age requirement.
+        </p>
+
+    </div>
+</div>
+
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="/images/esports-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+</div>
+
+<script>
+function openRegister(name, minAge) {
+    document.getElementById("registerModal").style.display = "flex";
+    document.getElementById("tournamentTitle").innerText = name;
+    document.getElementById("tournamentInput").value = name;
+
+    const ageInput = document.getElementById("playerAge");
+    const form = document.querySelector("#registerModal form");
+    const error = document.getElementById("ageError");
+
+    form.onsubmit = function(e) {
+        if (parseInt(ageInput.value) < minAge) {
+            e.preventDefault();
+            error.style.display = "block";
+        }
+    }
+}
+
+window.onclick = function(e) {
+    const modal = document.getElementById("registerModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

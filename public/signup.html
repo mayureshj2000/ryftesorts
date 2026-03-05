@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | RYFT Esports</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="inner-page">
+<body class="auth-page">
+
+    <div class="auth-container">
+        <div class="auth-box">
+
+            <h2>Create Account</h2>
+
+            <form action="/signup" method="POST">
+                
+                <div class="input-group">
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" class="auth-btn">JOIN THE ARENA</button>
+            </form>
+
+            <p class="auth-footer">
+                Already a member?
+                <a href="/login">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
