@@ -1,5 +1,3 @@
-# app.yaml for a Node.js Databricks app
-
 runtime:
   type: nodejs
 
@@ -7,4 +5,4 @@ entry_point:
   file: server.js
 
 command:
-  run: "node server.js"
+  run: ["node", "server.js"]
