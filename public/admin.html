@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin Panel | RYFT</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body class="auth-page">
+
+        <div class="auth-container">
+
+            <div class="auth-box">
+
+            <h2>Create Tournament</h2>
+
+            <form action="/create-tournament" method="POST">
+
+                <div class="input-group">
+                    <input type="text" name="name" required>
+                    <label>Tournament Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="game" required>
+                    <label>Game</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="mode" required>
+                    <label>Mode (Solo / Squad)</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="date" name="date" required>
+                    <label>Date</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" name="prize" required>
+                    <label>Prize Pool</label>
+                </div>
+
+
+                <button class="auth-btn">Create Tournament</button>
+
+            </form>
+
+            </div>
+        </div>
+
+    </body>
+</html>
