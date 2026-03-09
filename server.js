@@ -1,8 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 5000;
-let registrations = [];
+const PORT = process.env.PORT || 5000;let registrations = [];
 let tournaments = [];
 let adminLoggedIn = false;
 
@@ -179,9 +178,8 @@ res.redirect("/tournaments");
 });
 
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://0.0.0.0:${PORT}`);
-  //console.log(`Server running at http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 app.get("/admin", (req, res) => {
@@ -350,8 +348,6 @@ registrations.push({
 });
 res.send("Registration successful!");
 });
-
-let playerCount = registrations.filter(r => r.tournament === t.name).length;
 
 app.post("/set-room", (req, res) => {
   const { tournament, roomId, roomPass } = req.body;
